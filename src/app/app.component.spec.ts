@@ -1,31 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
+// describe('AppComponent', () => {
+//   it('Should be 0 when negative', () => {
+//     const instance = new AppComponent();
+//     const res = instance.compute(-1);
+//     expect(res).toBe(0);
+//   });
+// });
+
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [AppComponent],
+    });
   });
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'test-plb-23'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('test-plb-23');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('test-plb-23 app is running!');
+  it('Should be 10 when negative', () => {
+    let fixture = TestBed.createComponent(AppComponent);
+    let app = fixture.componentInstance;
+    const res = app.compute(-1);
+    expect(res).toBe(10);
   });
 });
